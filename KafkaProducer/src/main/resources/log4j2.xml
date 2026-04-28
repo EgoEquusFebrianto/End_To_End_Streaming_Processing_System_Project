@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Appenders>
+        <!-- Console Appender -->
+        <Console name="Console" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+        </Console>
+
+        <!-- Rolling File Appender -->
+        <RollingFile name="RollingFile" fileName="logs/app.log"
+                     filePattern="logs/app-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout>
+                <Pattern>%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n</Pattern>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="1"/>
+        </RollingFile>
+
+        <RollingFile name="KafkaSystem" fileName="logs/kafka.log"
+                     filePattern="logs/kafka-%d{yyyy-MM-dd}.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} [%t] %-5level %logger{36} - %msg%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="3"/>
+        </RollingFile>
+
+        <RollingFile name="AnalyticsRollingFile" fileName="logs/kafkaLogAnalytics.log"
+                     filePattern="logs/kafkaLogAnalytics-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="%d{yyyy-MM-dd HH:mm:ss} %msg%n"/>
+            <Policies>
+                <!-- Rolling berdasarkan ukuran file (10MB) -->
+                <SizeBasedTriggeringPolicy size="10MB"/>
+                <!-- Rolling berdasarkan waktu (setiap hari) -->
+                <TimeBasedTriggeringPolicy interval="1" modulate="true"/>
+            </Policies>
+            <DefaultRolloverStrategy max="30">
+                <!-- Hapus file log yang lebih dari 30 hari -->
+                <Delete basePath="logs" maxDepth="1">
+                    <IfFileName glob="kafkaLogAnalytics-*.log.gz"/>
+                    <IfLastModified age="30d"/>
+                </Delete>
+            </DefaultRolloverStrategy>
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+        <Logger name="org.apache.kafka" level="info" additivity="false">
+            <AppenderRef ref="KafkaSystem"/>
+        </Logger>
+
+        <!--        <Logger name="org.apache.kafka" level="info" additivity="false"/>-->
+        <Logger name="org.apache.zookeeper" level="error" additivity="false"/>
+
+        <Logger name="KafkaProducerApp" level="info" additivity="false">
+            <AppenderRef ref="Console"/>
+            <AppenderRef ref="RollingFile"/> <!-- atau file lain yang kamu definisikan -->
+        </Logger>
+
+        <Logger name="AnalyticsLogs" level="info" additivity="false">
+            <AppenderRef ref="AnalyticsRollingFile"/>
+        </Logger>
+        <!--         Logger for Kafka -->
+        <!--        <Logger name="org.example.Intro" level="info" additivity="false">-->
+        <!--            <AppenderRef ref="KafkaAppender"/>-->
+        <!--        </Logger>-->
+
+        <!--         Logger Utama -->
+        <Root level="info">
+            <AppenderRef ref="Console"/>
+            <!--            <AppenderRef ref="RollingFile"/>-->
+            <!--            <AppenderRef ref="KafkaAppender"/>-->
+        </Root>
+    </Loggers>
+</Configuration>

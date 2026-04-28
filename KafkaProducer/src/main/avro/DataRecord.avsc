@@ -1,0 +1,128 @@
+{
+  "type": "record",
+  "name": "DataRecord",
+  "namespace": "kudadiri.kafka.serializer",
+  "fields": [
+
+    {"name": "Unnamed_0", "type": ["null", "int"], "default": null},
+    {"name": "Flow_ID", "type": ["null", "string"], "default": null},
+    {"name": "Source_IP", "type": ["null", "string"], "default": null},
+    {"name": "Source_Port", "type": ["null", "int"], "default": null},
+    {"name": "Destination_IP", "type": ["null", "string"], "default": null},
+    {"name": "Destination_Port", "type": ["null", "int"], "default": null},
+    {"name": "Protocol", "type": ["null", "int"], "default": null},
+
+    {
+      "name": "Timestamp",
+      "type": ["null", {"type": "long", "logicalType": "timestamp-millis"}],
+      "default": null
+    },
+
+    {"name": "Flow_Duration", "type": ["null", "int"], "default": null},
+    {"name": "Total_Fwd_Packets", "type": ["null", "int"], "default": null},
+    {"name": "Total_Backward_Packets", "type": ["null", "int"], "default": null},
+
+    {"name": "Total_Length_of_Fwd_Packets", "type": ["null", "double"], "default": null},
+    {"name": "Total_Length_of_Bwd_Packets", "type": ["null", "double"], "default": null},
+
+    {"name": "Fwd_Packet_Length_Max", "type": ["null", "double"], "default": null},
+    {"name": "Fwd_Packet_Length_Min", "type": ["null", "double"], "default": null},
+    {"name": "Fwd_Packet_Length_Mean", "type": ["null", "double"], "default": null},
+    {"name": "Fwd_Packet_Length_Std", "type": ["null", "double"], "default": null},
+
+    {"name": "Bwd_Packet_Length_Max", "type": ["null", "double"], "default": null},
+    {"name": "Bwd_Packet_Length_Min", "type": ["null", "double"], "default": null},
+    {"name": "Bwd_Packet_Length_Mean", "type": ["null", "double"], "default": null},
+    {"name": "Bwd_Packet_Length_Std", "type": ["null", "double"], "default": null},
+
+    {"name": "Flow_Bytes_s", "type": ["null", "double"], "default": null},
+    {"name": "Flow_Packets_s", "type": ["null", "double"], "default": null},
+
+    {"name": "Flow_IAT_Mean", "type": ["null", "double"], "default": null},
+    {"name": "Flow_IAT_Std", "type": ["null", "double"], "default": null},
+    {"name": "Flow_IAT_Max", "type": ["null", "double"], "default": null},
+    {"name": "Flow_IAT_Min", "type": ["null", "double"], "default": null},
+
+    {"name": "Fwd_IAT_Total", "type": ["null", "double"], "default": null},
+    {"name": "Fwd_IAT_Mean", "type": ["null", "double"], "default": null},
+    {"name": "Fwd_IAT_Std", "type": ["null", "double"], "default": null},
+    {"name": "Fwd_IAT_Max", "type": ["null", "double"], "default": null},
+    {"name": "Fwd_IAT_Min", "type": ["null", "double"], "default": null},
+
+    {"name": "Bwd_IAT_Total", "type": ["null", "double"], "default": null},
+    {"name": "Bwd_IAT_Mean", "type": ["null", "double"], "default": null},
+    {"name": "Bwd_IAT_Std", "type": ["null", "double"], "default": null},
+    {"name": "Bwd_IAT_Max", "type": ["null", "double"], "default": null},
+    {"name": "Bwd_IAT_Min", "type": ["null", "double"], "default": null},
+
+    {"name": "Fwd_PSH_Flags", "type": ["null", "int"], "default": null},
+    {"name": "Bwd_PSH_Flags", "type": ["null", "int"], "default": null},
+    {"name": "Fwd_URG_Flags", "type": ["null", "int"], "default": null},
+    {"name": "Bwd_URG_Flags", "type": ["null", "int"], "default": null},
+
+    {"name": "Fwd_Header_Length", "type": ["null", "long"], "default": null},
+    {"name": "Bwd_Header_Length", "type": ["null", "long"], "default": null},
+
+    {"name": "Fwd_Packets_s", "type": ["null", "double"], "default": null},
+    {"name": "Bwd_Packets_s", "type": ["null", "double"], "default": null},
+
+    {"name": "Min_Packet_Length", "type": ["null", "double"], "default": null},
+    {"name": "Max_Packet_Length", "type": ["null", "double"], "default": null},
+    {"name": "Packet_Length_Mean", "type": ["null", "double"], "default": null},
+    {"name": "Packet_Length_Std", "type": ["null", "double"], "default": null},
+    {"name": "Packet_Length_Variance", "type": ["null", "double"], "default": null},
+
+    {"name": "FIN_Flag_Count", "type": ["null", "int"], "default": null},
+    {"name": "SYN_Flag_Count", "type": ["null", "int"], "default": null},
+    {"name": "RST_Flag_Count", "type": ["null", "int"], "default": null},
+    {"name": "PSH_Flag_Count", "type": ["null", "int"], "default": null},
+    {"name": "ACK_Flag_Count", "type": ["null", "int"], "default": null},
+    {"name": "URG_Flag_Count", "type": ["null", "int"], "default": null},
+    {"name": "CWE_Flag_Count", "type": ["null", "int"], "default": null},
+    {"name": "ECE_Flag_Count", "type": ["null", "int"], "default": null},
+
+    {"name": "Down_Up_Ratio", "type": ["null", "double"], "default": null},
+
+    {"name": "Average_Packet_Size", "type": ["null", "double"], "default": null},
+    {"name": "Avg_Fwd_Segment_Size", "type": ["null", "double"], "default": null},
+    {"name": "Avg_Bwd_Segment_Size", "type": ["null", "double"], "default": null},
+
+    {"name": "Fwd_Header_Length_1", "type": ["null", "long"], "default": null},
+
+    {"name": "Fwd_Avg_Bytes_Bulk", "type": ["null", "int"], "default": null},
+    {"name": "Fwd_Avg_Packets_Bulk", "type": ["null", "int"], "default": null},
+    {"name": "Fwd_Avg_Bulk_Rate", "type": ["null", "int"], "default": null},
+
+    {"name": "Bwd_Avg_Bytes_Bulk", "type": ["null", "int"], "default": null},
+    {"name": "Bwd_Avg_Packets_Bulk", "type": ["null", "int"], "default": null},
+    {"name": "Bwd_Avg_Bulk_Rate", "type": ["null", "int"], "default": null},
+
+    {"name": "Subflow_Fwd_Packets", "type": ["null", "int"], "default": null},
+    {"name": "Subflow_Fwd_Bytes", "type": ["null", "int"], "default": null},
+    {"name": "Subflow_Bwd_Packets", "type": ["null", "int"], "default": null},
+    {"name": "Subflow_Bwd_Bytes", "type": ["null", "int"], "default": null},
+
+    {"name": "Init_Win_bytes_forward", "type": ["null", "int"], "default": null},
+    {"name": "Init_Win_bytes_backward", "type": ["null", "int"], "default": null},
+    {"name": "act_data_pkt_fwd", "type": ["null", "int"], "default": null},
+    {"name": "min_seg_size_forward", "type": ["null", "int"], "default": null},
+
+    {"name": "Active_Mean", "type": ["null", "double"], "default": null},
+    {"name": "Active_Std", "type": ["null", "double"], "default": null},
+    {"name": "Active_Max", "type": ["null", "double"], "default": null},
+    {"name": "Active_Min", "type": ["null", "double"], "default": null},
+
+    {"name": "Idle_Mean", "type": ["null", "double"], "default": null},
+    {"name": "Idle_Std", "type": ["null", "double"], "default": null},
+    {"name": "Idle_Max", "type": ["null", "double"], "default": null},
+    {"name": "Idle_Min", "type": ["null", "double"], "default": null},
+
+    {"name": "SimillarHTTP", "type": ["null", "string"], "default": null},
+    {"name": "Inbound", "type": ["null", "int"], "default": null},
+    {"name": "Label", "type": ["null", "string"], "default": null},
+
+    {"name": "producer_timestamp", "type": ["null", "long"], "default": null},
+    {"name": "producerTimestampStr", "type": ["null", "string"], "default": null}
+
+  ]
+}

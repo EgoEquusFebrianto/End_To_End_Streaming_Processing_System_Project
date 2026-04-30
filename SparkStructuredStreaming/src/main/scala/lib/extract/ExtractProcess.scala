@@ -10,6 +10,7 @@ object ExtractProcess {
     val df_raw = spark.readStream
       .format(settings("format"))
       .option("kafka.bootstrap.servers", settings("servers"))
+      .option("subscribe", settings("topic"))
       .option("startingOffsets", settings("startValue"))
       .load()
 

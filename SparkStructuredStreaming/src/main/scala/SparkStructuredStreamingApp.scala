@@ -15,7 +15,7 @@ object SparkStructuredStreamingApp {
     println("Spark selesai dimuat..")
 
     println("Memuat model..")
-    val rf_model = ModelLoader.getModelRandomForest("rf_model_ddos_detection")
+//    val rf_model = ModelLoader.getModelRandomForest("rf_model_ddos_detection")
     println("Model berhasil dimuat..")
 
     val featureCols = Array(
@@ -46,15 +46,15 @@ object SparkStructuredStreamingApp {
     // Feature Engineering
     val df_vec = FeatureEngineeringTransform.process(df_initial, featureCols)
 
-    // Random Forest Prediction
-    val df_pred = RandomForestPredictor.process(df_vec, rf_model)
-
-    // Final Process
-    val df_final = FinalTransform.process(df_pred)
+//    // Random Forest Prediction
+//    val df_pred = RandomForestPredictor.process(df_vec, rf_model)
+//
+//    // Final Process
+//    val df_final = FinalTransform.process(df_pred)
 
     // Store (Simpan) Data
     val sinkConfig = getStreamConfigs("sink")
-    ParquetSink.process(df_final, sinkConfig)
+    ParquetSink.process(df_vec, sinkConfig)
 
     println("Pipeline Data Streaming Berhenti...")
     spark.stop()

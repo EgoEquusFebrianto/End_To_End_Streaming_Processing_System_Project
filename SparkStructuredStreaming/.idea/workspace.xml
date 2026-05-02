@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="b02735aa-d422-4a6e-a06e-96c549331540" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/scala/lib/extract/ExtractProcess.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/lib/extract/ExtractProcess.scala" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/scala/SparkStructuredStreamingApp.scala" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/scala/SparkStructuredStreamingApp.scala" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +17,13 @@
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
     </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Scala Object" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
